@@ -2,7 +2,6 @@ import streamlit as st
 import yfinance as yf
 import pandas as pd
 import matplotlib.pyplot as plt
-import requests
 
 # Fungsi untuk mengambil data saham
 def get_stock_data(ticker, start_date, end_date, interval):
@@ -103,11 +102,10 @@ def main():
 
         # Menampilkan informasi tambahan
         st.subheader('Informasi Tambahan')
-        stock_info2 = get_stock_info2(ticker)
-        st.write('Sektor:', stock_info2['sector'])
-        st.write('ROE', stock_info2['returnOnEquity'])
-        st.write('ROA', stock_info2['returnOnAssets'])
-        st.write('EPS', stock_info2['earningsGrowth'])
+        st.write('Sektor:', stock_info['sector'])
+        st.write('ROE', stock_info['returnOnEquity'])
+        st.write('ROA', stock_info['returnOnAssets'])
+        st.write('EPS', stock_info['earningsGrowth'])
 
 
 if __name__ == '__main__':
